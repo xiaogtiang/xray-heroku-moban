@@ -95,7 +95,26 @@ vless 性能更加优秀，占用资源更少。
 
 <details>
 <summary>可以使用Cloudflare的Workers来中转流量，（支持VLESS\VMESS\Trojan-Go的WS模式）配置为：</summary>
+</details>
 
+<details>
+<summary>CloudFlare Workers单账户反代代码</summary>
+
+```js
+addEventListener(
+    "fetch",event => {
+        let url=new URL(event.request.url);
+        url.hostname="appname.herokuapp.com";
+        let request=new Request(url,event.request);
+        event. respondWith(
+            fetch(request)
+        )
+    }
+)
+```
+</details>
+
+<details>
 <summary>CloudFlare Workers单双日轮换反代代码</summary>
 
 ```js
@@ -120,7 +139,9 @@ addEventListener(
     }
 )
 ```
+</details>
 
+<details>
 <summary>CloudFlare Workers每五天轮换一遍式反代代码</summary>
 
 ```js
@@ -157,7 +178,9 @@ addEventListener(
     }
 )
 ```
+</details>
 
+<details>
 <summary>CloudFlare Workers一周轮换反代代码</summary>
 
 ```js
