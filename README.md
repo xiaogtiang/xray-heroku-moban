@@ -95,6 +95,7 @@ vless 性能更加优秀，占用资源更少。
 
 <details>
 <summary>可以使用Cloudflare的Workers来中转流量，（支持VLESS\VMESS\Trojan-Go的WS模式）配置为：</summary>
+
 <summary>CloudFlare Workers单双日轮换反代代码</summary>
 
 ```js
@@ -119,9 +120,7 @@ addEventListener(
     }
 )
 ```
-</details>
 
-<details>
 <summary>CloudFlare Workers每五天轮换一遍式反代代码</summary>
 
 ```js
@@ -158,9 +157,7 @@ addEventListener(
     }
 )
 ```
-</details>
 
-<details>
 <summary>CloudFlare Workers一周轮换反代代码</summary>
 
 ```js
