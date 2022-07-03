@@ -243,10 +243,7 @@ addEventListener(
 * [bclswl0827](https://github.com/bclswl0827/v2ray-heroku)
 * [yxhit](https://github.com/yxhit)
 * [badafans](https://github.com/badafans/better-cloudflare-ip/tree/20201208)
-* 由于CloudFlare的dev被封CloudFlare Pages 反代脚本分享
-```
-</details>
-
+* [小御坂的破站]由于CloudFlare的dev被封CloudFlare Pages 反代脚本分享
 <details>
 <summary>CloudFlare Workers单双日轮换反代代码</summary>
 
