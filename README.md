@@ -266,8 +266,11 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
-* 五天轮换反代代码
-* export default {
+</details>
+
+<details>
+<summary>五天轮换反代代码</summary>
+ export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
     const day2 = 'app1.example.com'
@@ -296,8 +299,12 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
-* 一周轮换反代代码
-* export default {
+ ```
+</details>
+
+<details>
+<summary>CloudFlare Workers一周轮换反代代码</summary>
+ export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
     const day2 = 'app1.example.com'
