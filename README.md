@@ -244,8 +244,11 @@ addEventListener(
 * [yxhit](https://github.com/yxhit)
 * [badafans](https://github.com/badafans/better-cloudflare-ip/tree/20201208)
 * 由于CloudFlare的dev被封CloudFlare Pages 反代脚本分享
-* 单双日轮换反代代码
-* export default {
+</details>
+
+<details>
+<summary>单双日轮换反代代码</summary>
+export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
     const day2 = 'app1.example.com'
