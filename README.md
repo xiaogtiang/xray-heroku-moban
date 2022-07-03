@@ -243,3 +243,89 @@ addEventListener(
 * [bclswl0827](https://github.com/bclswl0827/v2ray-heroku)
 * [yxhit](https://github.com/yxhit)
 * [badafans](https://github.com/badafans/better-cloudflare-ip/tree/20201208)
+* 由于CloudFlare的dev被封CloudFlare Pages 反代脚本分享
+* 单双日轮换反代代码
+* export default {
+  async fetch(request, env) {
+    const day1 = 'app0.example.com'
+    const day2 = 'app1.example.com'
+    let url = new URL(request.url);
+    if (url.pathname.startsWith('/')) {
+      let day = new Date()
+      if (day.getDay() % 2) {
+        url.hostname = day1
+      } else {
+        url.hostname = day2
+      }
+      let new_request = new Request(url, request);
+      return fetch(new_request);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};
+* 五天轮换反代代码
+* export default {
+  async fetch(request, env) {
+    const day1 = 'app0.example.com'
+    const day2 = 'app1.example.com'
+    const day3 = 'app2.example.com'
+    const day4 = 'app3.example.com'
+    const day5 = 'app4.example.com'
+    let url = new URL(request.url);
+    if (url.pathname.startsWith('/')) {
+      let day = new Date().getDay() % 5;
+      if (day === 0) {
+        url.hostname = day1
+      } else if (day === 1) {
+        url.hostname = day2
+      } else if (day === 2) {
+        url.hostname = day3
+      } else if (day === 3) {
+        url.hostname = day4
+      } else if (day === 4) {
+        url.hostname = day5
+      } else {
+        url.hostname = day1
+      }
+      let new_request = new Request(url, request);
+      return fetch(new_request);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};
+* 一周轮换反代代码
+* export default {
+  async fetch(request, env) {
+    const day1 = 'app0.example.com'
+    const day2 = 'app1.example.com'
+    const day3 = 'app2.example.com'
+    const day4 = 'app3.example.com'
+    const day5 = 'app4.example.com'
+    const day6 = 'app5.example.com'
+    const day7 = 'app6.example.com'
+    let url = new URL(request.url);
+    if (url.pathname.startsWith('/')) {
+      let day = new Date().getDay();
+      if (day === 0) {
+        url.hostname = day1
+      } else if (day === 1) {
+        url.hostname = day2
+      } else if (day === 2) {
+        url.hostname = day3
+      } else if (day === 3) {
+        url.hostname = day4
+      } else if (day === 4) {
+        url.hostname = day5
+      } else if (day === 5) {
+        url.hostname = day6
+      } else if (day === 6) {
+        url.hostname = day7
+      } else {
+        url.hostname = day1
+      }
+      let new_request = new Request(url, request);
+      return fetch(new_request);
+    }
+    return env.ASSETS.fetch(request);
+  },
+};
