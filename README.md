@@ -244,10 +244,13 @@ addEventListener(
 * [yxhit](https://github.com/yxhit)
 * [badafans](https://github.com/badafans/better-cloudflare-ip/tree/20201208)
 * 由于CloudFlare的dev被封CloudFlare Pages 反代脚本分享
+```
 </details>
 
 <details>
-<summary>单双日轮换反代代码</summary>
+<summary>CloudFlare Workers单双日轮换反代代码</summary>
+
+```js
 export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
@@ -266,10 +269,13 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
+```
 </details>
 
 <details>
-<summary>五天轮换反代代码</summary>
+<summary>CloudFlare Workers五天轮换反代代码</summary>
+
+```js
  export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
@@ -299,11 +305,13 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
- ```
+```
 </details>
 
 <details>
 <summary>CloudFlare Workers一周轮换反代代码</summary>
+
+```js
  export default {
   async fetch(request, env) {
     const day1 = 'app0.example.com'
